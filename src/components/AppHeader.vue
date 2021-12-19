@@ -15,6 +15,7 @@
 		grid-area: header;
 		display: flex;
 		align-items: center;
-		margin: 5px 5px 5px 15px;
+		padding-left: 15px;
+		border-bottom: 1px solid lightgray;
 	}
 </style>
