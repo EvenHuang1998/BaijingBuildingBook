@@ -1,36 +1,34 @@
 <template>
-	<n-anchor :show-rail="showRail" :show-background="showBackground">
-		<n-anchor-link title="基础用法" href="#basic" />
-		<n-anchor-link title="忽略间隔" href="#ignore-gap" />
-		<n-anchor-link title="固定" href="#affix" />
-		<n-anchor-link title="滚动到" href="#scrollto" />
-	</n-anchor>
+	<div class="leftNav">
+		<n-scrollbar style="max-height: 100%;">
+			<n-anchor :show-rail="false" :show-background="false">
+				<n-anchor-link v-for="cato in categories" :title="cato.name" :href="'#'+cato.id" :key="cato.id" />
+			</n-anchor>
+		</n-scrollbar>
+	</div>
 </template>
 
 <script>
-	import {
-		defineComponent,
-		ref
-	} from 'vue'
 
-	export default defineComponent({
-		name: 'LeftNav',
-		setup() {
-			return {
-				showRail: ref(false),
-				showBackground: ref(false)
-			}
-		}
-	})
+	export default{
+		name:'LeftNav',
+		props:['categories']
+	}
+	
 </script>
 
-<style>
+<style scoped>
 	.leftNav {
 		grid-area: nav;
+		margin: 5px 5px;
+		overflow: scroll;
+		overflow-x: hidden;
+		overflow-y: hidden;
 	}
 
-	n-anchor-link {
-		display: block;
+	.n-anchor-link {
 		height: 40px;
+		align-items: center;
+		justify-content: center;
 	}
 </style>

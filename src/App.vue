@@ -1,19 +1,38 @@
 <template>
 	<div id="containner">
 		<app-header></app-header>
-		<left-nav></left-nav>
-		<div class="showBuildings"></div>
+		<left-nav :categories="categories"></left-nav>
+		<show-buildings></show-buildings>
 	</div>
 </template>
 
 <script>
 	import AppHeader from './components/AppHeader.vue'
 	import LeftNav from './components/LeftNav.vue'
+	import ShowBuildings from './components/ShowBuildings.vue'
+
 	export default {
 		name: 'App',
+		
 		components: {
 			AppHeader,
-			LeftNav
+			LeftNav,
+			ShowBuildings
+		},
+		data(){
+			return{
+				categories:[
+					{
+						name:'严大人',
+						id:'yandaren',
+					},
+					{
+						name:'梅山七怪',
+						id:'meishanqiguai'
+					}
+					
+				]
+			}
 		}
 	}
 </script>
@@ -33,19 +52,12 @@
 			"header header"
 			"nav content";
 
-
 		width: 400px;
 		height: 700px;
-		background-color: antiquewhite;
 		margin: 100px auto;
 		border-radius: 25px;
 		overflow: hidden;
 		box-shadow: lightgrey 0px 0px 10px;
 	}
 
-
-	.showBuildings {
-		background-color: cadetblue;
-		grid-area: content
-	}
 </style>

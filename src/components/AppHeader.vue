@@ -1,5 +1,7 @@
 <template>
-  <h2>百景建筑图鉴</h2>
+	<div class="appHeader">
+		<h2>百景建筑图鉴</h2>
+	</div>
 </template>
 
 <script>
@@ -8,8 +10,11 @@
   }
 </script>
 
-<style>
-	h2{
+<style scoped>
+	.appHeader{
 		grid-area: header;
+		display: flex;
+		align-items: center;
+		margin: 5px 5px 5px 15px;
 	}
 </style>
