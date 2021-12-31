@@ -1,7 +1,8 @@
 <template>
 	<div id="containner">
 		<app-header></app-header>
-		<left-nav :categories="categories"></left-nav>
+		<!-- <left-nav :categories="categories"></left-nav> -->
+		<left-nav></left-nav>
 		<show-buildings></show-buildings>
 	</div>
 </template>
@@ -18,21 +19,6 @@
 			AppHeader,
 			LeftNav,
 			ShowBuildings
-		},
-		data(){
-			return{
-				categories:[
-					{
-						name:'严大人',
-						id:'yandaren',
-					},
-					{
-						name:'梅山七怪',
-						id:'meishanqiguai'
-					}
-					
-				]
-			}
 		}
 	}
 </script>
@@ -42,6 +28,7 @@
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
+		scroll-behavior:smooth;
 	}
 
 	#containner {

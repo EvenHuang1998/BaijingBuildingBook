@@ -2,19 +2,32 @@
 	<div class="leftNav">
 		<n-scrollbar style="max-height: 100%;">
 			<n-anchor :show-rail="false" :show-background="false">
-				<n-anchor-link v-for="cato in categories" :title="cato.name" :href="'#'+cato.id" :key="cato.id" />
+				<n-anchor-link  v-for="cate in nav_categories" :title="cate.cate_name"
+					:href="'#'+cate.cate_id" :key="cate.cate_id" />
 			</n-anchor>
 		</n-scrollbar>
 	</div>
 </template>
 
 <script>
-
-	export default{
-		name:'LeftNav',
-		props:['categories']
+	export default {
+		name: 'LeftNav',
+		data(){
+			return{
+				nav_categories:[]
+			}
+		},
+		created(){
+			let that=this;
+			this.axios.get('http://localhost:5000/category/getAllCategories')
+			.then(function(data){
+				return data.data;
+			})
+			.then(function(data){
+				that.nav_categories=data;
+			})
+		}
 	}
-	
 </script>
 
 <style scoped>
