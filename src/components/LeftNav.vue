@@ -33,14 +33,17 @@
 <style scoped>
 	.leftNav {
 		grid-area: nav;
-		margin: 5px 5px;
+		margin-right: 5px;
 		overflow: scroll;
 		overflow-x: hidden;
 		overflow-y: hidden;
+		border-right: 1px solid lightgray;
+		/* background-color: #d3d5d8; */
 	}
 
 	.n-anchor-link {
 		height: 40px;
+		border-bottom: 1px solid lightgray;
 		align-items: center;
 		justify-content: center;
 	}
