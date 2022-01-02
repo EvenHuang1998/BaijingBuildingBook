@@ -38,7 +38,7 @@
 					return data.data;
 				})
 				.then(function(data){
-					that.buildings=data;[]
+					that.buildings=data;
 				})
 			}
 		},
