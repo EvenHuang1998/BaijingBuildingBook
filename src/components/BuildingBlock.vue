@@ -3,9 +3,13 @@
 	<n-grid :cols="2">
 		<n-gi v-for="(building_info,index) in building_list" :key="index">
 			<div class="singleBuilding">
-				<n-image width="85" height="65" :src="building_info.building_img_url" />
-				<p>{{building_info.building_name}}</p>
+				
+				<router-link :to="`/building/${building_info.building_id}`">
+				<n-image width="85" height="65" :src="building_info.building_img_url" preview-disabled/>
+					<p>{{building_info.building_name}}</p>
+				</router-link>
 			</div>
+			
 		</n-gi>
 	</n-grid>
 	</div>
@@ -26,7 +30,7 @@
 				let that=this;
 				this.axios.get("http://127.0.0.1:5000/buildingcate/getBuildingListOfCategory",{
 					params:{
-						'cateid':that.block_id
+						"cateid":that.block_id
 					}
 				})
 				.then(function(data){
@@ -35,10 +39,8 @@
 				.then(function(data){
 					data.forEach(ele=>{
 						ele.building_img_url=require("../assets/buildings_image/"+ele.building_img_url);
-						//ele.building_img_url="../assets/buildings_image/"+ele.building_img_url;
 					})
 					that.building_list=data;
-					// console.log(that.building_list);
 				})
 			}
 		},

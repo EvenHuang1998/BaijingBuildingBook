@@ -32,7 +32,7 @@
 
 <style scoped>
 	.leftNav {
-		grid-area: nav;
+		/* grid-area: nav; */
 		margin-right: 5px;
 		overflow: scroll;
 		overflow-x: hidden;

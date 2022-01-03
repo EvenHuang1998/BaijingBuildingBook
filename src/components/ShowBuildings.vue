@@ -2,7 +2,9 @@
 	<div class="showBuildings">
 		<n-scrollbar style="max-height: 100%;">
 			<search-input></search-input>
-			<building-block v-for="cate in categories" :block_id="cate.cate_id" :block_title="cate.cate_name" :key="cate.id"></building-block>
+				<building-block v-for="cate in categories" :block_id="cate.cate_id" :block_title="cate.cate_name" :key="cate.id">
+				</building-block>
+
 		</n-scrollbar>
 	</div>
 </template>
@@ -52,8 +54,9 @@
 
 <style scoped>
 	.showBuildings {
-		grid-area: content;
+		/* grid-area: content; */
 		margin: 5px 5px;
+		height: 100%;
 		overflow: scroll;
 		overflow-y: hidden;
 		overflow-x: hidden;
